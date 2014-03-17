@@ -1,0 +1,6 @@
+starta ec2
+använd existerande nyckel eller skapa ny
+kör scp för att få över installscript
+kör insallscript / provision över ssh -e
+kopiera över java
+kompilera, testa, kör på ec2 mha maven
