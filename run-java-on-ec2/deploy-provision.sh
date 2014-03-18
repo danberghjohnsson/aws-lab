@@ -1,3 +1,3 @@
-KEY=$1
-DNS=$2
-scp -r -v -i $KEY provision ubuntu@$DNS:provision
+_KEY=$1
+_DNS=$2
+scp -r -v -i $_KEY provision ubuntu@$_DNS:provision
