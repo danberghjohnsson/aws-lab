@@ -1,1 +1,3 @@
-ssh -i key/danbj-key-tmp-01.pem.txt ubuntu@ec2-54-226-221-18.compute-1.amazonaws.com "(cd java-on-ec2; mvn exec:java -Dexec.mainClass="danbjson.tmp.App")"
+_KEY=$1
+_DNS=$2
+ssh -i $_KEY ubuntu@$_DNS "(cd java-on-ec2; sh scripts/mvn-exec-java.sh)"
