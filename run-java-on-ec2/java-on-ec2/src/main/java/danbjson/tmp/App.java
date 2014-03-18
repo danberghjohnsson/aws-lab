@@ -13,8 +13,10 @@ public class App
     {
         List<Integer> lotsofints = new ArrayList<Integer>();
         for(int i=0; i < 1000000; i ++) {
-            lotsofints.add(new Integer(i));
+            lotsofints.add(i);
         }
-        lotsofints.stream().parallel().forEach((t) -> System.out.println(Thread.currentThread().getName() + " " + t));
+        lotsofints.stream().parallel().forEach(
+                (n) -> System.out.println(String.format("Thread-exec %d %s", n, Thread.currentThread().getName()))
+        );
     }
 }
