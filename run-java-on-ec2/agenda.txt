@@ -1,6 +1,11 @@
 starta ec2
-använd existerande nyckel eller skapa ny
-kör scp för att få över installscript
-kör insallscript / provision över ssh -e
-kopiera över java
-kompilera, testa, kör på ec2 mha maven
+skapa ny nyckel - spara som fil
+sätt env KEY och DNS
+kör deploy-provision.sh
+kör ssh-to-ec2.sh
+på ec2 kör provision/install-01 och 02
+logga ut ec2
+kopiera över java ned deploy-java
+ssh-to-ec2
+(cd java-on-ec2; mvn install)
+(cd java-on-ec2; sh scripts/mvn-exec-java.sh)

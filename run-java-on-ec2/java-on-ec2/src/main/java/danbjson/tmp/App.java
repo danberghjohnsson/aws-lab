@@ -4,19 +4,22 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Hello world!
- *
+ * List primes
  */
 public class App 
 {
+
+    private static final int UPPER_LIMIT = 20; //300000;
+
     public static void main( String[] args )
     {
         long start = System.currentTimeMillis();
         List<Integer> lotsofints = new ArrayList<Integer>();
-        for(int i=2; i < 300000; i ++) {
+        for(int i=2; i <
+                UPPER_LIMIT; i ++) {
             lotsofints.add(i);
         }
-        lotsofints.stream().forEach(
+        lotsofints.stream().forEach( // .parallel()
                 (n) -> {
                     boolean prime = isPrime(n);
                     System.out.println(String.format("Thread-exec %d %b %s", n, prime, Thread.currentThread().getName()));
@@ -36,15 +39,4 @@ public class App
 
     }
 
-    private static long fib(int n) {
-        long result;
-        switch (n) {
-            case 0 : result = 1; break;
-            case 1 : result = 1; break;
-            default:
-                result = fib(n - 2) + fib(n - 1);
-                break;
-        }
-        return result;
-    }
 }
